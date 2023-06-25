@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://TileMap/NormalTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TileMap/NormalRes/tile_0152.png" type="Texture" id=2]
+[ext_resource path="res://Fontes/Fonte_Instrucoes_Titulo.tres" type="DynamicFont" id=3]
+[ext_resource path="res://TileMap/NormalRes/tile_0151.png" type="Texture" id=4]
+[ext_resource path="res://Menus/FakePlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menus/Instrucoes/Gerador.gd" type="Script" id=6]
+[ext_resource path="res://Fontes/Fonte_Instrucoes.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Menus/MenuPrincipal/VoltarPressed.png" type="Texture" id=13]
+[ext_resource path="res://Menus/MenuPrincipal/VoltarHover.png" type="Texture" id=14]
+[ext_resource path="res://Menus/MenuPrincipal/VoltarIdle.png" type="Texture" id=15]
+[ext_resource path="res://Menus/Creditos/Voltar.gd" type="Script" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Creditos" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NormalTileMap" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+z_index = -2
+tile_data = PoolIntArray( 9, 85, 0, 10, 84, 0, 11, 84, 0, 12, 84, 0, 13, 84, 0, 14, 84, 0, 15, 84, 0, 16, 84, 0, 17, 84, 0, 18, 84, 0, 19, 0, 0, 20, 103, 0, 21, 103, 0, 22, 1, 0, 23, 84, 0, 24, 84, 0, 25, 84, 0, 26, 84, 0, 27, 84, 0, 28, 84, 0, 65545, 85, 0, 65546, 84, 0, 65547, 84, 0, 65548, 84, 0, 65549, 1, 0, 65550, 84, 0, 65551, 84, 0, 65552, 84, 0, 65553, 84, 0, 65554, 84, 0, 65555, 85, 0, 65556, 25, 0, 65557, 25, 0, 65558, 83, 0, 65559, 84, 0, 65560, 84, 0, 65561, 84, 0, 65562, 84, 0, 65563, 84, 0, 65564, 84, 0, 131081, 85, 0, 131082, 103, 0, 131083, 103, 0, 131084, 103, 0, 131085, 103, 0, 131086, 103, 0, 131087, 103, 0, 131088, 103, 0, 131089, 103, 0, 131090, 103, 0, 131091, 104, 0, 131092, 26, 0, 131093, 26, 0, 131094, 102, 0, 131095, 103, 0, 131096, 103, 0, 131097, 103, 0, 131098, 103, 0, 131099, 103, 0, 131100, 103, 0, 196617, 85, 0, 196628, 26, 0, 196629, 26, 0, 262153, 85, 0, 262164, 26, 0, 262165, 26, 0, 327689, 85, 0, 327700, 26, 0, 327701, 26, 0, 393225, 85, 0, 393236, 26, 0, 393237, 26, 0, 458761, 85, 0, 458772, 26, 0, 458773, 26, 0, 458776, 13, 0, 458777, 14, 0, 458778, 14, 0, 458779, 15, 0, 524297, 85, 0, 524303, 13, 0, 524304, 14, 0, 524305, 15, 0, 524308, 26, 0, 524309, 26, 0, 524312, 28, 0, 524313, 29, 0, 524314, 29, 0, 524315, 30, 0, 589833, 85, 0, 589839, 28, 0, 589840, 29, 0, 589841, 30, 0, 589844, 26, 0, 589845, 26, 0, 589848, 28, 0, 589849, 29, 0, 589850, 29, 0, 589851, 30, 0, 655369, 85, 0, 655375, 36, 0, 655376, 66, 0, 655377, 38, 0, 655380, 26, 0, 655381, 26, 0, 655384, 36, 0, 655385, 37, 0, 655386, 66, 0, 655387, 38, 0, 720905, 85, 0, 720912, 65, 0, 720916, 26, 0, 720917, 26, 0, 720922, 65, 0, 786441, 85, 0, 786446, 67, 0, 786447, 68, 0, 786448, 97, 0, 786452, 26, 0, 786453, 26, 0, 786456, 67, 0, 786457, 68, 0, 786458, 97, 0, 851977, 85, 0, 851979, 91, 0, 851983, 54, 0, 851984, 98, 0, 851988, 24, 0, 851989, 24, 0, 851992, 91, 0, 851993, 90, 0, 851994, 98, 0, 851996, 90, 0, 917513, 2, 0, 917514, 41, 0, 917515, 41, 0, 917516, 41, 0, 917517, 41, 0, 917518, 41, 0, 917519, 41, 0, 917520, 18, 0, 917521, 18, 0, 917522, 18, 0, 917523, 18, 0, 917524, 18, 0, 917525, 41, 0, 917526, 41, 0, 917527, 41, 0, 917528, 41, 0, 917529, 18, 0, 917530, 18, 0, 917531, 18, 0, 917532, 18, 0, 983049, 84, 0, 983050, 84, 0, 983051, 84, 0, 983052, 84, 0, 983053, 84, 0, 983054, 84, 0, 983055, 84, 0, 983056, 84, 0, 983057, 84, 0, 983058, 84, 0, 983059, 84, 0, 983060, 84, 0, 983061, 84, 0, 983062, 84, 0, 983063, 84, 0, 983064, 84, 0, 983065, 84, 0, 983066, 84, 0, 983067, 84, 0, 983068, 84, 0, 1048585, 84, 0, 1048586, 84, 0, 1048587, 84, 0, 1048588, 84, 0, 1048589, 84, 0, 1048590, 84, 0, 1048591, 84, 0, 1048592, 84, 0, 1048593, 84, 0, 1048594, 84, 0, 1048595, 84, 0, 1048596, 84, 0, 1048597, 84, 0, 1048598, 84, 0, 1048599, 84, 0, 1048600, 84, 0, 1048601, 84, 0, 1048602, 84, 0, 1048603, 84, 0, 1048604, 84, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fundo" type="ColorRect" parent="."]
+margin_right = 384.0
+margin_bottom = 600.0
+color = Color( 0.235294, 0.611765, 0.329412, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 136.0
+margin_top = 587.0
+margin_right = 772.0
+margin_bottom = 675.0
+rect_rotation = -90.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Instruções"
+scroll_active = false
+
+[node name="Moeda1" type="AnimatedSprite" parent="."]
+position = Vector2( 475, 387 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Moeda2" type="AnimatedSprite" parent="."]
+position = Vector2( 635, 387 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Moeda3" type="AnimatedSprite" parent="."]
+position = Vector2( 803, 387 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Moeda4" type="AnimatedSprite" parent="."]
+position = Vector2( 955, 387 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="FakePlayer" parent="." instance=ExtResource( 5 )]
+frame = 1
+
+[node name="Gerador" type="Position2D" parent="."]
+position = Vector2( 360, 472 )
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Gerador"]
+wait_time = 3.5
+autostart = true
+
+[node name="Voltar" type="TextureButton" parent="."]
+margin_left = 592.0
+margin_top = 528.0
+margin_right = 848.0
+margin_bottom = 592.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 14 )
+expand = true
+script = ExtResource( 16 )
+
+[node name="Texto" type="RichTextLabel" parent="."]
+margin_left = 400.0
+margin_top = 136.0
+margin_right = 1035.0
+margin_bottom = 473.0
+custom_fonts/normal_font = ExtResource( 12 )
+text = "Usa WAD ou as setas para te moveres e saltares.
+
+Tenta chegar ao fim de cada nível sempre colectando tudo o que encontras pela frente!"
+scroll_active = false
+
+[connection signal="timeout" from="Gerador/Timer" to="Gerador" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Voltar" to="Voltar" method="_on_Voltar_pressed"]

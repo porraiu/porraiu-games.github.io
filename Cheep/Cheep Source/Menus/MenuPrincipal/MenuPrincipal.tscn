@@ -1,0 +1,131 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://TileMap/NormalTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menus/MenuPrincipal/MenuPrincipal.gd" type="Script" id=2]
+[ext_resource path="res://Fontes/Fonte_Titulo.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Personagem/Animacao/Idle1.png" type="Texture" id=4]
+[ext_resource path="res://Menus/MenuPrincipal/CreditosIdle.png" type="Texture" id=5]
+[ext_resource path="res://Menus/MenuPrincipal/InstrucoesPressed.png" type="Texture" id=6]
+[ext_resource path="res://Menus/MenuPrincipal/CreditosHover.png" type="Texture" id=7]
+[ext_resource path="res://Menus/MenuPrincipal/InstrucoesIdle.png" type="Texture" id=8]
+[ext_resource path="res://Menus/MenuPrincipal/CreditosPressed.png" type="Texture" id=9]
+[ext_resource path="res://Personagem/Animacao/Idle2.png" type="Texture" id=10]
+[ext_resource path="res://Menus/MenuPrincipal/InstrucoesHover.png" type="Texture" id=11]
+[ext_resource path="res://Personagem/Animacao/Idle3.png" type="Texture" id=12]
+[ext_resource path="res://Menus/MenuPrincipal/JogarHover.png" type="Texture" id=13]
+[ext_resource path="res://Menus/MenuPrincipal/JogarPressed.png" type="Texture" id=14]
+[ext_resource path="res://Menus/MenuPrincipal/JogarIdle.png" type="Texture" id=15]
+[ext_resource path="res://Menus/MenuPrincipal/Jogar.gd" type="Script" id=16]
+[ext_resource path="res://Menus/MenuPrincipal/Instrucoes.gd" type="Script" id=17]
+[ext_resource path="res://Menus/MenuPrincipal/Creditos.gd" type="Script" id=18]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, 32 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "mover"
+length = 2.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.25, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 32 ), Vector2( 32, 152 ), Vector2( 32, 32 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MenuPrincipal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="NormalTileMap" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+tile_data = PoolIntArray( 9, 85, 0, 12, 83, 0, 13, 84, 0, 14, 84, 0, 15, 84, 0, 16, 84, 0, 17, 84, 0, 18, 84, 0, 19, 0, 0, 20, 103, 0, 21, 103, 0, 22, 1, 0, 23, 84, 0, 24, 84, 0, 25, 0, 0, 26, 104, 0, 65545, 85, 0, 65548, 102, 0, 65549, 1, 0, 65550, 84, 0, 65551, 84, 0, 65552, 84, 0, 65553, 84, 0, 65554, 84, 0, 65555, 85, 0, 65556, 25, 0, 65557, 25, 0, 65558, 83, 0, 65559, 84, 0, 65560, 84, 0, 65561, 85, 0, 131081, 85, 0, 131085, 102, 0, 131086, 103, 0, 131087, 103, 0, 131088, 103, 0, 131089, 103, 0, 131090, 103, 0, 131091, 104, 0, 131092, 26, 0, 131093, 26, 0, 131094, 102, 0, 131095, 103, 0, 131096, 103, 0, 131097, 104, 0, 196617, 85, 0, 196628, 26, 0, 196629, 26, 0, 262153, 85, 0, 262164, 26, 0, 262165, 26, 0, 262167, 10, 0, 262168, 8, 0, 262169, 11, 0, 327689, 85, 0, 327700, 26, 0, 327701, 26, 0, 327704, 22, 0, 393225, 85, 0, 393236, 26, 0, 393237, 26, 0, 393239, 91, 0, 393240, 43, 0, 458761, 85, 0, 458772, 26, 0, 458773, 26, 0, 458774, 5, 0, 458775, 6, 0, 458776, 6, 0, 458777, 7, 0, 524297, 85, 0, 524308, 26, 0, 524309, 26, 0, 589833, 85, 0, 589839, 90, 0, 589840, 90, 0, 589841, 91, 0, 589844, 26, 0, 589845, 26, 0, 655369, 85, 0, 655372, 5, 0, 655373, 6, 0, 655374, 6, 0, 655375, 6, 0, 655376, 6, 0, 655377, 6, 0, 655378, 7, 0, 655380, 26, 0, 655381, 26, 0, 720905, 85, 0, 720916, 26, 0, 720917, 26, 0, 786441, 85, 0, 786452, 26, 0, 786453, 26, 0, 786459, 20, 0, 851977, 85, 0, 851979, 91, 0, 851980, 64, 0, 851988, 24, 0, 851989, 24, 0, 851993, 91, 0, 851994, 20, 0, 851995, 20, 0, 851996, 90, 0, 917513, 2, 0, 917514, 18, 0, 917515, 18, 0, 917516, 18, 0, 917517, 18, 0, 917518, 18, 0, 917519, 18, 0, 917520, 19, 0, 917521, 23, 0, 917522, 23, 0, 917523, 23, 0, 917524, 23, 0, 917525, 23, 0, 917526, 23, 0, 917527, 23, 0, 917528, 23, 0, 917529, 17, 0, 917530, 18, 0, 917531, 18, 0, 917532, 18, 0, 983049, 84, 0, 983050, 84, 0, 983051, 84, 0, 983052, 84, 0, 983053, 84, 0, 983054, 84, 0, 983055, 84, 0, 983056, 85, 0, 983057, 44, 0, 983058, 44, 0, 983059, 44, 0, 983060, 44, 0, 983061, 44, 0, 983062, 44, 0, 983063, 44, 0, 983064, 44, 0, 983065, 83, 0, 983066, 84, 0, 983067, 84, 0, 983068, 84, 0, 1048585, 84, 0, 1048586, 84, 0, 1048587, 84, 0, 1048588, 84, 0, 1048589, 84, 0, 1048590, 84, 0, 1048591, 84, 0, 1048592, 85, 0, 1048593, 44, 0, 1048594, 44, 0, 1048595, 44, 0, 1048596, 44, 0, 1048597, 44, 0, 1048598, 44, 0, 1048599, 44, 0, 1048600, 44, 0, 1048601, 83, 0, 1048602, 84, 0, 1048603, 84, 0, 1048604, 84, 0 )
+
+[node name="Fundo" type="ColorRect" parent="."]
+margin_right = 384.0
+margin_bottom = 600.0
+color = Color( 0.235294, 0.611765, 0.329412, 1 )
+
+[node name="Titulo" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 376.0
+margin_bottom = 127.97
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Cheep"
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Titulo"]
+anims/RESET = SubResource( 3 )
+anims/mover = SubResource( 2 )
+
+[node name="PersonagemFake" type="AnimatedSprite" parent="."]
+position = Vector2( 496, 328 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="Jogar" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 256.0
+margin_right = 320.0
+margin_bottom = 320.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 13 )
+expand = true
+script = ExtResource( 16 )
+
+[node name="Instrucoes" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 352.0
+margin_right = 320.0
+margin_bottom = 416.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 11 )
+expand = true
+script = ExtResource( 17 )
+
+[node name="Creditos" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 448.0
+margin_right = 320.0
+margin_bottom = 512.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+expand = true
+script = ExtResource( 18 )
+
+[connection signal="pressed" from="Jogar" to="Jogar" method="_on_Jogar_pressed"]
+[connection signal="pressed" from="Instrucoes" to="Instrucoes" method="_on_Instrucoes_pressed"]
+[connection signal="pressed" from="Creditos" to="Creditos" method="_on_Creditos_pressed"]
