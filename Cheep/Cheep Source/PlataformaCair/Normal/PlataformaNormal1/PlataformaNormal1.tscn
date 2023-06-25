@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TileMap/NormalRes/tile_0000.png" type="Texture" id=1]
+[ext_resource path="res://PlataformaCair/Normal/PlataformaNormal1/PlataformaNormal1.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 2.66667 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 27, 8 )
+
+[node name="PlataformaNormal1" type="KinematicBody2D"]
+scale = Vector2( 3, 3 )
+moving_platform_apply_velocity_on_leave = 2
+script = ExtResource( 4 )
+
+[node name="PlataformaHitbox" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="PlataformaHitbox"]
+position = Vector2( 6.35783e-07, -13.3333 )
+shape = SubResource( 3 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( -3.27826e-07, -1 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -18, 0 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 18, 0 )
+texture = ExtResource( 1 )
+
+[node name="DesaparecerTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="PlataformaHitbox" to="." method="_on_PlataformaHitbox_body_entered"]
+[connection signal="timeout" from="DesaparecerTimer" to="." method="_on_DesaparecerTimer_timeout"]
