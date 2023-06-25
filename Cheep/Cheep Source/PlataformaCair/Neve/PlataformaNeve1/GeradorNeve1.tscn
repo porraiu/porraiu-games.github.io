@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://PlataformaCair/Neve/PlataformaNeve1/PlataformaNeve1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://PlataformaCair/Normal/PlataformaNormal1/GeradorNormal1.gd" type="Script" id=2]
-
-[node name="GeradorNeve1" type="Position2D"]
-script = ExtResource( 2 )
-
-[node name="PlataformaNeve1" parent="." instance=ExtResource( 1 )]
