@@ -1,7 +1,5 @@
 # Jogos que desenvolvi no Godot Game Engine.
 
-Os Jogos que tenho são:
-
   ## MeteoFight
   
   Controla uma Nave Espacial que atira e destrói Meteoros que vêm contra si. Ganha a melhor pontuação que conseguires!
